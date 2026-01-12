@@ -16,7 +16,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: https://github.com/infra-team/cluster-deployments.git
+        repoURL: https://github.com/ROHITkumaw/multiargocluster.git
         targetRevision: main
         path: 'multicluster/{{cluster}}'
       destination:
