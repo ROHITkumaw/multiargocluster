@@ -17,7 +17,7 @@ spec:
       project: default
       source:
         repoURL: https://github.com/infra-team/cluster-deployments.git
-        targetRevision: HEAD
+        targetRevision: main
         path: multicluster/{{cluster}}
       destination:
         server: '{{url}}'
