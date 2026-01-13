@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: argoapplistgen
+  namespace: argocd
+spec:
+  generators:
+  - list:
+      elements:
+      - cluster: staginglistgenerator
+        url: https://192.168.59.113:8443
+  template:
+    metadata:
+      name: '{{cluster}}-application'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/ROHITkumaw/multiargocluster.git
+        targetRevision: main
+        path: 'multicluster/{{cluster}}'
+      destination:
+        server: '{{url}}'
+        namespace: default
